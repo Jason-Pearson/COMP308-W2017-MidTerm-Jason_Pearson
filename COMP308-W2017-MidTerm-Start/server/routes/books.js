@@ -32,7 +32,7 @@ router.get('/add', (req, res, next) => {
 res.render('books/details', {
     title: "Add a new Book",
     books: '',
-    displayName: req.user ? req.user.displayName : ''
+    //displayName: req.user ? req.user.displayName : ''
   });
 });
 
