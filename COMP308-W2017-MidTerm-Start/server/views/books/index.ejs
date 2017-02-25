@@ -8,7 +8,7 @@
           <!-- ------------------------ -->
           <!-- FIX THE ADD BUTTON BELOW in href-->
           <!-- ------------------------ -->
-          <a href="books/details/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add Book</a>
+          <a href="/books/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add Book</a>
           <br>
           <div class="table-responsive">
             <table class="table table-bordered table-striped table-hover">
@@ -23,7 +23,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <!-- Template Row -->
+                <!-- Template Row <a href="/games/<%= games[count]._id %>" - <a href="/games/delete/<%= games[count]._id %>"-->
                 <% for (let count = 0; count < books.length; count++) { %>
                 <tr>
                   <td><%= books[count].Title %></td>
@@ -35,15 +35,15 @@
                     <!-- ------------------------ -->
                     <!-- ADD the EDIT BUTTON HERE -->
                     <!-- ------------------------ -->
-                    <a href="/:id" class="btn btn-primary"><i class="fa fa-plus"></i> Edit Book Details</a>
-
+                    <a href="/books/:id" class="btn btn-primary"><i class="fa fa-plus"></i> Edit Book Details</a>
+                       
                   </td>
 
                   <td class="text-center">
                     <!-- ------------------------ -->
                     <!-- ADD the DELETE BUTTON HERE -->
                     <!-- ------------------------ -->
-                    <a href="/delete/:id" class="btn btn-primary"><i class="fa fa-plus"></i> Delete Book</a>
+                    <a href="/books/delete/:id" class="btn btn-primary"><i class="fa fa-plus"></i> Delete Book</a>
                   </td>
                 </tr>
                 <% } %>
