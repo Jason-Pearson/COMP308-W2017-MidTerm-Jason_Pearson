@@ -2,11 +2,11 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
-let passport = require('passport'); //Adding the Authentication
+//let passport = require('passport'); //Adding the Authentication
 
 // define the game model
 let book = require('../models/books');
-let User = userModel.User; //Adding the Authentication
+/*let User = userModel.User; //Adding the Authentication
 
 //Adding the Authentication
 function requireAuth(req, res, next) {
@@ -15,19 +15,20 @@ function requireAuth(req, res, next) {
     return res.redirect('login');
   }
   next();
-}
+}*/
 
 /* GET home page. wildcard */
 router.get('/', (req, res, next) => {
   res.render('content/index', {
     title: 'Home',
     books: '',
-    displayName: req.user ? req.user.displayName : ''
+    //displayName: req.user ? req.user.displayName : ''
    });
 });
 //Adding the Authentication~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 /* GET contact page. */
+/*
 router.get('/contact', (req, res, next) => {
   res.render('content/contact', {
     title: 'Contact',
@@ -107,5 +108,5 @@ router.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/');
 });
-
+*/
 module.exports = router;

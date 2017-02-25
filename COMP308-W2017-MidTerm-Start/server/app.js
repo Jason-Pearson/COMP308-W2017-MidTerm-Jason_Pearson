@@ -5,19 +5,21 @@ let favicon = require('serve-favicon');
 let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
+/*
 let session = require('express-session'); //Add AUTH
 let passportLocal = require('passport-local');
 let LocalStrategy = passportLocal.Strategy;
+*/
 
 // import "mongoose" - required for DB Access
 let mongoose = require('mongoose');
-
+/*
 // import flash to display login errors / messages
 let flash = require('connect-flash');
 
 // import passport for authentication
 let passport = require('passport');
-
+*/
 // URI
 let config = require('./config/db');
 
@@ -46,7 +48,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client')));
-
+/*
 //Add AUTH~~~~~~~~
 // setup session
 app.use(session({
@@ -58,11 +60,11 @@ app.use(session({
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-
+*/
 // route redirects
 app.use('/', index);
 app.use('/books', books);
-
+/*
 //Add AUTH
 // passport config
 let userModel = require('./models/user');
@@ -73,7 +75,7 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
+*/
 // Handle 404 Errors
   app.use(function(req, res) {
       res.status(400);
